@@ -3,6 +3,7 @@ from .models import Board
 
 def home(request):
     boards = Board.objects.all()
+    print("hello")
     return render(request, 'home.html', {'boards': boards})
 
 def board_topics(request, pk):
