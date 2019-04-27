@@ -25,11 +25,7 @@ class SignUpTests(TestCase):
         form = self.response.context.get('form')
         self.assertIsInstance(form, SignUpForm)
 
-     def test_form_inputs(self):
-        '''
-        The view must contain five inputs: csrf, username, email,
-        password1, password2
-        '''
+    def test_form_inputs(self):
         self.assertContains(self.response, '<input', 5)
         self.assertContains(self.response, 'type="text"', 1)
         self.assertContains(self.response, 'type="email"', 1)
@@ -39,8 +35,8 @@ class SuccessfulSignUpTests(TestCase):
     def setUp(self):
         url = reverse('signup')
         data = {
-            'username': 'john',
-            'email': 'john@doe.com',
+            'username': 'santoshp',
+            'email': 'santoshpaudyal99@gmail.com',
             'password1': 'abcdef123456',
             'password2': 'abcdef123456'
         }
